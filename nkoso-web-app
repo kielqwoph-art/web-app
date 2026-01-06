@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nkɔsoɔ Technologies - Transform Your Business with AI & Custom Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff8c42;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff8c42;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+            padding: 120px 0 80px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff8c42, #8bc34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff8c42, #8bc34a);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
+        }
+
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3a5f;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #5fa954;
+            font-weight: bold;
+        }
+
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.15);
+            padding: 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #ff8c42, #8bc34a);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
+        }
+
+        footer {
+            background: #1a2f4a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(139, 195, 74, 0.2);
+            border: 2px solid #8bc34a;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-item h4 {
+            color: #ff8c42;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .contact-item p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #ff8c42;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Nkɔsoɔ Technologies</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Technology for Progress</h1>
+            <p>Helping businesses and organizations drive progress through intelligent technology, automation, and data-driven systems</p>
+            <a href="#contact" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Core Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI & Automation</h3>
+                    <ul>
+                        <li>AI chatbots for customer service</li>
+                        <li>Workflow automation solutions</li>
+                        <li>Intelligent reporting systems</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Analytics & Dashboards</h3>
+                    <ul>
+                        <li>Business intelligence platforms</li>
+                        <li>Impact & performance tracking</li>
+                        <li>Real-time data visualization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Custom Software & Digital Systems</h3>
+                    <ul>
+                        <li>Internal business tools</li>
+                        <li>Web platforms & applications</li>
+                        <li>Process digitization solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Nkɔsoɔ Technologies</h2>
+            <div class="about-content">
+                <p>
+                    Nkɔsoɔ Technologies is a digital and AI solutions company helping businesses and organizations 
+                    drive progress through intelligent technology, automation, and data-driven systems.
+                </p>
+                <p>
+                    Based in Accra, Ghana, we're at the forefront of digital transformation, bringing world-class 
+                    AI and automation solutions to businesses across West Africa. We believe in the power of technology 
+                    to streamline operations, unlock insights from data, and drive sustainable growth.
+                </p>
+                <p>
+                    Our team combines technical expertise with deep understanding of local business needs to deliver 
+                    solutions that truly make a difference. Whether you're looking to automate repetitive tasks, 
+                    gain deeper insights into your operations, or build custom digital tools, we're here to help 
+                    you succeed in the digital age.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-info">
+                <div class="contact-info-grid">
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:nkosotechnologies@gmail.com">nkosotechnologies@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+233548494699">0548494699</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Location</h4>
+                        <p>GE-325-2310, Dome Pillar 2<br>Accra, Ghana</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="success-message" id="successMessage">
+                    Thank you! We'll get back to you soon.
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Your company name">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nkɔsoɔ Technologies. Empowering Ghanaian businesses through innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            this.reset();
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
